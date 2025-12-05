@@ -1,27 +1,6 @@
+import Core
 import Foundation
 import RegexBuilder
-
-enum FileError: Error {
-    case fileNotFound
-}
-
-public func getSourceFileSibling(_ sourceFilePath: StaticString, _ fileName: String) -> String {
-    let directory = URL(fileURLWithPath: String(describing: sourceFilePath))
-        .deletingLastPathComponent()
-    let file = directory.appendingPathComponent(fileName)
-    return file.path
-}
-
-public func readEntireFile(_ path: String) throws -> String {
-    guard let fileHandle = FileHandle(forReadingAtPath: path) else {
-        throw FileError.fileNotFound
-    }
-    defer {
-        fileHandle.closeFile()
-    }
-    let data = fileHandle.readDataToEndOfFile()
-    return String(data: data, encoding: .utf8)!
-}
 
 struct Box {
     let l: Int
@@ -47,9 +26,9 @@ private func ribbonNeededForBox(_ box: Box) -> Int {
 }
 
 @main
-struct Day1 {
+struct Main {
     static func main() {
-        let content = try! readEntireFile(getSourceFileSibling(#filePath, "input.txt"))
+        let content = try! readEntireFile(getSourceFileSibling(#filePath, "Files/input.txt"))
         // let content = try! readEntireFile(getSourceFileSibling(#filePath, "example.txt"))
         let regex = /(?<l>\d+)x(?<w>\d+)x(?<h>\d+)/
         let boxes = content.matches(of: regex).map { match in
