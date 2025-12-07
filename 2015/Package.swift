@@ -14,6 +14,7 @@ let package = Package(
         .executable(name: "Day6", targets: ["Day6"]),
         .executable(name: "Day7", targets: ["Day7"]),
         .executable(name: "Day8", targets: ["Day8"]),
+        .executable(name: "Day9", targets: ["Day9"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-crypto.git", from: "3.0.0"),
@@ -36,5 +37,9 @@ let package = Package(
             .product(name: "Collections", package: "swift-collections")
         ], exclude: ["Files/"]),
         .executableTarget(name: "Day8", dependencies: ["Core"], exclude: ["Files/"]),
+        .executableTarget(name: "Day9", dependencies: [
+            "Core",
+            .product(name: "Collections", package: "swift-collections")
+        ], exclude: ["Files/"]),
     ]
 )
