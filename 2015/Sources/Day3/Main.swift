@@ -62,7 +62,7 @@ private func part2(_ moves: [Move]) -> Int {
 struct Main {
     static func main() {
         // let file = getSourceFileSibling(#filePath, "Files/example.txt")
-        let file = getSourceFileSibling(#filePath, "Files/input.txt")
+        let file = getFileSibling(#filePath, "Files/input.txt")
         let content = try! readEntireFile(file)
         let moves = Array(content).reduce(into: [Move]()) { (acc, char) in
             let move = Move(rawValue: String(char))!

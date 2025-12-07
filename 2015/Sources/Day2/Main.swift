@@ -28,7 +28,7 @@ private func ribbonNeededForBox(_ box: Box) -> Int {
 @main
 struct Main {
     static func main() {
-        let content = try! readEntireFile(getSourceFileSibling(#filePath, "Files/input.txt"))
+        let content = try! readEntireFile(getFileSibling(#filePath, "Files/input.txt"))
         // let content = try! readEntireFile(getSourceFileSibling(#filePath, "example.txt"))
         let regex = /(?<l>\d+)x(?<w>\d+)x(?<h>\d+)/
         let boxes = content.matches(of: regex).map { match in

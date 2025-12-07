@@ -4,7 +4,7 @@ import Foundation
 @main
 struct Day1 {
     static func main() {
-        let content = try! readEntireFile(getSourceFileSibling(#filePath, "Files/input.txt"))
+        let content = try! readEntireFile(getFileSibling(#filePath, "Files/input.txt"))
         var floor = 0
         var basementIndex = 0
         for (i, c) in content.enumerated() {

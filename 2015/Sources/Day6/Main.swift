@@ -80,7 +80,7 @@ private func part2(_ instructions: [Instruction]) -> Int {
 @main
 struct Main {
     static func main() {
-        let file = getSourceFileSibling(#filePath, "Files/input.txt")
+        let file = getFileSibling(#filePath, "Files/input.txt")
         let content = try! readEntireFile(file)
         let instructions = parse(content)
 

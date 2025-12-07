@@ -119,6 +119,46 @@
             "target": "Day6",
             "configuration": "release",
             "preLaunchTask": "swift: Build Release Day6"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:2015}",
+            "name": "Debug Day7",
+            "target": "Day7",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug Day7"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:2015}",
+            "name": "Release Day7",
+            "target": "Day7",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release Day7"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:2015}",
+            "name": "Debug Day8",
+            "target": "Day8",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug Day8"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:2015}",
+            "name": "Release Day8",
+            "target": "Day8",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release Day8"
         }
     ]
 }

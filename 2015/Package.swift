@@ -12,9 +12,12 @@ let package = Package(
         .executable(name: "Day4", targets: ["Day4"]),
         .executable(name: "Day5", targets: ["Day5"]),
         .executable(name: "Day6", targets: ["Day6"]),
+        .executable(name: "Day7", targets: ["Day7"]),
+        .executable(name: "Day8", targets: ["Day8"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-crypto.git", from: "3.0.0")
+        .package(url: "https://github.com/apple/swift-crypto.git", from: "3.0.0"),
+        .package(url: "https://github.com/apple/swift-collections", from: "1.0.0")
     ],
     targets: [
         .target(name: "Core"),
@@ -28,5 +31,10 @@ let package = Package(
         ], exclude: ["Files/"]),
         .executableTarget(name: "Day5", dependencies: ["Core"], exclude: ["Files/"]),
         .executableTarget(name: "Day6", dependencies: ["Core"], exclude: ["Files/"]),
+        .executableTarget(name: "Day7", dependencies: [
+            "Core",
+            .product(name: "Collections", package: "swift-collections")
+        ], exclude: ["Files/"]),
+        .executableTarget(name: "Day8", dependencies: ["Core"], exclude: ["Files/"]),
     ]
 )

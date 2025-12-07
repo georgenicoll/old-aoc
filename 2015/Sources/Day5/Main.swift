@@ -78,7 +78,7 @@ private func isNice2(_ string: String) -> Bool {
 struct Main {
     static func main() {
         //let file = getSourceFileSibling(#filePath, "Files/example.txt")
-        let file = getSourceFileSibling(#filePath, "Files/input.txt")
+        let file = getFileSibling(#filePath, "Files/input.txt")
         let lines = try! readFileLineByLine(file: file, into: [String]()) { $0.append($1) }
 
         let part1 = lines.count(where: isNice1)

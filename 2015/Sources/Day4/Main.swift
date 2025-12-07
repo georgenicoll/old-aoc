@@ -26,7 +26,7 @@ private func findHashMatch(content: String, _ check: ([UnsafeRawBufferPointer.El
 struct Main {
     static func main() {
         // let file = getSourceFileSibling(#filePath, "Files/example.txt")
-        let file = getSourceFileSibling(#filePath, "Files/input.txt")
+        let file = getFileSibling(#filePath, "Files/input.txt")
         let content = try! readEntireFile(file)
 
         let part1 = findHashMatch(content: content) { bytes in
